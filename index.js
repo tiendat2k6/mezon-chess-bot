@@ -12,7 +12,7 @@ async function main() {
     if (event?.content?.t === "*ping") {
       const channelFetch = await client.channels.fetch(event.channel_id)
       const messageFetch = await channelFetch.messages.fetch(event.message_id)
-      messageFetch.reply({ t: 'pong' })
+      await messageFetch.reply({ t: 'pong' })
     }
   })
 }
