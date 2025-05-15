@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "patch-package",
     "start": "nodemon index"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "mezon-sdk": "^2.7.61",
-    "patch-package": "^8.0.0"
+    "mezon-sdk": "^2.7.91"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
