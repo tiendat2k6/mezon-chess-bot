@@ -12,7 +12,17 @@ async function main() {
     if (event?.content?.t === "*ping") {
       const channelFetch = await client.channels.fetch(event.channel_id)
       const messageFetch = await channelFetch.messages.fetch(event.message_id)
-      await messageFetch.reply({ t: 'pong' })
+
+      // reply message
+      await messageFetch.reply({ t: 'reply pong' })
+
+      // create new channel message
+      await channelFetch.send({ t: 'channel send pong' })
+
+      // send DM message
+      const clan = await client.clans.fetch(event.clan_id)
+      const user = await clan.users.fetch(event.sender_id)
+      await user.sendDM({t: 'hello DM'})
     }
   })
 }
