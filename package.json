@@ -1,15 +1,11 @@
 {
-  "name": "mezon-bot-example",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "nodemon index"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "mezon-sdk": "^2.7.93"
-  },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "concurrently": "^9.2.0",
+    "live-server": "^1.2.2"
+  },
+  "scripts": {
+    "start:bot": "nodemon backend/index.js",
+    "start:web": "live-server frontend",
+    "start": "concurrently \"npm run start:bot\" \"npm run start:web\""
   }
 }
